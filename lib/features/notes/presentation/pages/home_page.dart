@@ -454,7 +454,7 @@ class _NoteActionsSheet extends StatelessWidget {
             _ActionTile(
               icon: Icons.delete_outline_rounded,
               label: AppStrings.delete,
-              color: AppColors.danger,
+              color: AppColors.primary,
               onTap: onDelete,
             ),
           ],
