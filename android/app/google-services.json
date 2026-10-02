@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "382278232240",
+    "project_id": "athar-ca8bb",
+    "storage_bucket": "athar-ca8bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382278232240:android:87cab9d440d9420640b375",
+        "android_client_info": {
+          "package_name": "com.example.athar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSD18qbHY7RA1Ejyazr7uGDeBxTcc8QCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382278232240:android:e4233c38015f035c40b375",
+        "android_client_info": {
+          "package_name": "com.example.note_x"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSD18qbHY7RA1Ejyazr7uGDeBxTcc8QCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
