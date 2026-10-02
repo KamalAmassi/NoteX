@@ -34,4 +34,13 @@ class AppStrings {
     if (n <= 10) return '$n ملاحظات';
     return '$n ملاحظة';
   }
+  static const String noteDeleted = 'تم حذف الملاحظة';
+  static const String undo = 'تراجع';
+
+  static String greeting() {
+    final h = DateTime.now().hour;
+    if (h < 12) return 'صباح الخير';
+    if (h < 18) return 'طاب يومك';
+    return 'مساء الخير';
+  }
 }

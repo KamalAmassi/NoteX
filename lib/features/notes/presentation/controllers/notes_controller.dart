@@ -74,7 +74,14 @@ class NotesController extends GetxController {
   }
 
   Future<void> deleteNote(String id) async {
+    notes.removeWhere((n) => n.id == id);
     await deleteNoteUseCase(id);
+    await loadNotes();
+  }
+
+  // للتراجع عن الحذف: نرجّع نفس الملاحظة بنفس الـ id
+  Future<void> restoreNote(Note note) async {
+    await addNoteUseCase(note);
     await loadNotes();
   }
 

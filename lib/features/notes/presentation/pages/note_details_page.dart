@@ -10,44 +10,6 @@ class NoteDetailsPage extends GetView<NotesController> {
   final String noteId;
   const NoteDetailsPage({super.key, required this.noteId});
 
-  Future<void> _confirmDelete() async {
-    final confirmed = await Get.dialog<bool>(
-      AlertDialog(
-        backgroundColor: AppColors.surface,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
-        title: const Text(
-          AppStrings.deleteTitle,
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
-        ),
-        content: const Text(AppStrings.deleteMessage),
-        actions: [
-          TextButton(
-            onPressed: () => Get.back(result: false),
-            child: const Text(
-              AppStrings.cancel,
-              style: TextStyle(color: AppColors.textSecondary),
-            ),
-          ),
-          TextButton(
-            onPressed: () => Get.back(result: true),
-            child: const Text(
-              AppStrings.delete,
-              style: TextStyle(
-                color: AppColors.danger,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-
-    if (confirmed == true) {
-      await controller.deleteNote(noteId);
-      Get.back();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -66,13 +28,11 @@ class NoteDetailsPage extends GetView<NotesController> {
             IconButton(
               tooltip: AppStrings.editNote,
               icon: const Icon(Icons.edit_outlined),
-              onPressed: () => Get.to(() => NoteEditorPage(note: note)),
-            ),
-            IconButton(
-              tooltip: AppStrings.delete,
-              icon: const Icon(Icons.delete_outline_rounded,
-                  color: AppColors.danger),
-              onPressed: _confirmDelete,
+              onPressed: () => Get.to(
+                    () => NoteEditorPage(note: note),
+                transition: Transition.downToUp,
+                duration: const Duration(milliseconds: 320),
+              ),
             ),
             const SizedBox(width: 6),
           ],
